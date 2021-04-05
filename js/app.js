@@ -1,6 +1,10 @@
-//  Registramos el service Worker
+var url = window.location.href;
+var swLocation = '/ChatPecados/sw.js';
+
 if(navigator.serviceWorker){
-    navigator.serviceWorker.register('/sw.js');
+    if(url.includes('localhost')){
+        swLocation = '/sw.js';
+    }
 }
 
 // Referencias de jQuery
